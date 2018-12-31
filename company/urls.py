@@ -11,6 +11,8 @@ urlpatterns = [
 	path('<int:pk>/update/', CompanyUpdateView.as_view(), name = 'company_update'),
 	path('<int:pk>/delete/', CompanyDeleteView.as_view(), name = 'company_update'),
 	path('funcreate/', views.create_company, name = 'create_company'),
+	path('category/', views.CategoryListView.as_view(), name ='category'),
+	#path('category/<int:pk>/', views.CategoryOpenDetailView.as_view(), name='open_category'),
 ]
 urlpatterns += staticfiles_urlpatterns()
 

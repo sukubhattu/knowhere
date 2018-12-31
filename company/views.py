@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from .forms import CompanyModelForm
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Company
+from .models import Company, Category
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.urls import reverse
 
 # Create your views here.
 class CompanyListView(ListView):
@@ -55,3 +56,13 @@ def create_company(request):
 		return redirect('company_list')
 	return render(request, 'company/create_company.html', {'form': form})
 
+
+class CategoryListView(ListView):
+	model = Category
+	template_name = 'company/category_list.html'
+
+
+#class CategoryOpenDetailView(DetailView):
+#	model =Category
+#	template_name = 'company/open_category.html'
+	

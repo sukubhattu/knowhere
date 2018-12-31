@@ -1,0 +1,9 @@
+{% extends 'company/base.html' %}
+
+{% block body %}
+{% for object in object_list %}
+<!--<a href = "{% url 'open_category' category.pk %}">{{ object.name }}</a>-->
+<p>{{object.name}}</p>
+{% endfor %}
+
+{% endblock %}
